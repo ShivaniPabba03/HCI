@@ -1,0 +1,222 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedMeer - Home</title>
+    <link rel="stylesheet" href="projectstyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Belleza&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic Styles */
+        body {
+            background-color: #ffe6e6;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin: 0;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffcccc;
+            color: #333;
+        }
+
+        .menu-btn {
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .site-title {
+            font-family: 'Belleza', sans-serif;
+            font-size: 2rem;
+            color: #333;
+            margin-left: 15px;
+            flex-grow: 1;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 100%;
+            background: #ffb3b3;
+            padding-top: 60px;
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li a {
+            display: block;
+            padding: 15px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* Scrolling Message */
+        .scrolling-message {
+            background-color: #ff9999;
+            padding: 10px;
+            color: #fff;
+            font-size: 1.2rem;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        /* Image Slider */
+        .image-slider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffc1c1;
+            padding: 20px;
+            position: relative;
+        }
+
+        .slider-container {
+            display: flex;
+            overflow: hidden;
+            width: 80%;
+        }
+
+        .slider-img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 1s ease;
+        }
+
+        .dots {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 3px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot.active {
+            background-color: #e60000;
+        }
+
+        /* JavaScript to Auto Slide Images */
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <h1 class="site-title">MedMeeR</h1>
+        <img src="C:\Users\hanis\OneDrive\Desktop\HCI LAB\medmeerlogo.project.png" alt="MedMeer Logo" class="logo">
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="project.html">Home</a></li>
+            <li><a href="medmeer.html">The MedMeer</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="submit_details.html">Problem Picture</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <!-- Scrolling Message -->
+    <div class="scrolling-message" id="scrolling-message">
+        <marquee behavior="scroll" direction="left">
+            Welcome to MedMeer! | New updates available | Personalized health suggestions for chronic issues now live | Join us to improve your health journey!
+        </marquee>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <section class="image-slider">
+            <div class="slider-container" id="slider-container">
+                <img src="C:\Users\hanis\OneDrive\Desktop\HCI LAB\img2.jpg" alt="MedMeer Society" class="slider-img">
+                <img src="C:\Users\hanis\OneDrive\Desktop\HCI LAB\img3.png" alt="MedMeer Services" class="slider-img">
+                <img src="C:\Users\hanis\OneDrive\Desktop\HCI LAB\img5.jpg" alt="MedMeer Community" class="slider-img">
+            </div>
+            <div class="dots">
+                <span class="dot" onclick="moveToSlide(0)"></span>
+                <span class="dot" onclick="moveToSlide(1)"></span>
+                <span class="dot" onclick="moveToSlide(2)"></span>
+            </div>
+        </section>
+
+        <!-- Welcome Note Section -->
+        <section class="welcome-note">
+            <h2>Welcome to MedMeeR</h2>
+            <p>We are dedicated to providing the best healthcare solutions tailored to your needs.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>&copy; 2024 Indian Medical Authorities. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Toggle Sidebar Menu
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Image Slider Auto-scroll
+        let currentSlide = 0;
+        const slides = document.getElementsByClassName('slider-img');
+        const dots = document.getElementsByClassName('dot');
+
+        function showSlide(index) {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+                dots[i].classList.remove('active');
+            }
+            slides[index].style.display = 'block';
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 3000); // Change image every 3 seconds
+    </script>
+</body>
+</html>
