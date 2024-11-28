@@ -1,0 +1,205 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MedMeer - Register</title>
+    <link rel="stylesheet" href="projectstyles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2; /* Light grey background */
+        }
+
+        header {
+            background-color: #ffcccc;
+            padding: 1rem;
+            text-align: center;
+            font-size: 2rem;
+            color: #333;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-btn {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 2rem auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #ff6666;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="email"],
+        input[type="password"],
+        input[type="text"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.5rem;
+            background-color: #cc3333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #b22a2a;
+        }
+
+        footer {
+            background-color: #ffcccc;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 200px;
+            background-color: #ff9999;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: -200px; /* Initially hidden */
+            transition: 0.3s ease;
+            padding-top: 60px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            display: block;
+        }
+
+        /* JavaScript for Sidebar Toggle */
+        .open {
+            left: 0; /* Show sidebar */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header and Navigation -->
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        MedMeeR - Register
+    </header>
+
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="project.html">Home</a></li>
+            <li><a href="medmeer.html">The MedMeer</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="submit_details.html">Problem Picture</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Create a New Account</h2>
+        <form id="register-form">
+            <label for="register-email">Email:</label>
+            <input type="email" id="register-email" required>
+        
+            <label for="register-password">Password:</label>
+            <input type="password" id="register-password" required>
+        
+            <label for="aadhaar">Aadhaar Number:</label>
+            <input type="text" id="aadhaar" required>
+        
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" required>
+        
+            <button type="submit">Register</button>
+        </form>
+        
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2024 MedMeer. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Sidebar Toggle and Form Submission -->
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById("sidebar");
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-200px"; // Hide sidebar
+            } else {
+                sidebar.style.left = "0px"; // Show sidebar
+            }
+        }
+
+        // Thank-you message on form submission
+        document.getElementById("register-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            alert("Thank you for submitting! Your registration was successful.");
+            // Optionally clear the form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+
+
+

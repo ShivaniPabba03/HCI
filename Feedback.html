@@ -1,0 +1,204 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MedMeer - Feedback</title>
+    <link rel="stylesheet" href="projectstyles.css">
+    <style>
+        /* General Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+        }
+
+        header {
+            background-color: #ffcccc;
+            padding: 1rem;
+            text-align: center;
+            font-size: 2rem;
+            color: #333;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-btn {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 2rem auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #ff6666;
+        }
+
+        form label {
+            font-weight: bold;
+            color: #333;
+            margin-top: 15px;
+            display: block;
+        }
+        form input[type="text"], form input[type="email"], form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+        form button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #cc3333;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        form button:hover {
+            background-color: #b22a2a;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 200px;
+            background-color: #ff9999;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: -200px; /* Initially hidden */
+            transition: 0.3s ease;
+            padding-top: 60px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            display: block;
+        }
+
+        /* Show sidebar */
+        .open {
+            left: 0; /* Show sidebar */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ffcccc;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header and Navigation -->
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        MedMeeR - Feedback
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="project.html">Home</a></li>
+            <li><a href="medmeer.html">The MedMeer</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="submit_details.html">Submit Details</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Your Feedback Matters</h2>
+        <form onsubmit="return showThankYou('Feedback Received! Thank you for your valuable input.')">
+            <label for="feedback-name">Name:</label>
+            <input type="text" id="feedback-name" required>
+        
+            <label for="feedback-email">Email:</label>
+            <input type="email" id="feedback-email" required>
+        
+            <label for="rating">Rating:</label>
+            <select id="rating" required>
+                <option value="">Choose Rating</option>
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select>
+        
+            <label for="comments">Comments:</label>
+            <textarea id="comments" rows="4" required></textarea>
+        
+            <button type="submit">Submit Feedback</button>
+        </form>
+        
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2024 MedMeer. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Sidebar Toggle -->
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("open"); // Toggle the "open" class to show or hide the sidebar
+        }
+    </script>
+
+</body>
+</html>
+
+
+

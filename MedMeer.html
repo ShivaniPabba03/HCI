@@ -1,0 +1,240 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedMeer - About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Courgette&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            background-color: #ffe6e6; /* Pale red background */
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header and Logo */
+        header {
+            display: flex;
+            align-items: center;
+            background-color: #ffcccc;
+            padding: 1rem;
+            color: #333;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-btn {
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #333;
+            margin-right: 1rem;
+        }
+
+        .site-title {
+            font-family: 'Courgette', cursive;
+            font-size: 2.5rem;
+            color: black;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .logo {
+            height: 50px;
+            margin-left: auto;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 200px;
+            background-color: #ff9999;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: -200px; /* Initially hidden */
+            transition: 0.3s ease;
+            padding-top: 60px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            display: block;
+        }
+
+        /* Main Content */
+        main {
+            margin-left: 0;
+            padding: 2rem;
+            transition: margin-left 0.3s ease;
+        }
+
+        .about-us {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            margin: auto;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        h2 {
+            color: #ff6666;
+            font-family: 'Courgette', cursive;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        h3 {
+            color: #cc3333;
+            font-weight: 500;
+            font-size: 1.8rem;
+            margin-top: 1rem;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 1.5rem;
+        }
+
+        ul li {
+            margin: 0.5rem 0;
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ff9999;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+
+        .footer-content div {
+            margin: 10px;
+        }
+
+        .social-media a img {
+            width: 30px;
+            margin: 0 10px;
+        }
+
+        .newsletter input[type="email"] {
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            width: 200px;
+        }
+
+        .newsletter button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            background-color: #cc3333;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* JavaScript for Sidebar Toggle */
+        .open {
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header and Navigation -->
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <h1 class="site-title">MedMeeR</h1>
+        <img src="C:\Users\hanis\OneDrive\Desktop\HCI LAB\medmeerlogo.project.png" alt="MedMeer Logo" class="logo">
+    </header>
+
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="project.html">Home</a></li>
+            <li><a href="medmeer.html">The MedMeer</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="submit_details.html">Problem Picture</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Us Content -->
+    <main id="main-content">
+        <section class="about-us">
+            <h2>About MedMeeR</h2>
+            <p>MedMeer is a health service provider that focuses on personalized medical solutions. We connect patients with doctors, provide detailed analysis, and recommend the best treatment for chronic health problems. Our goal is to revolutionize healthcare through innovation and technology.</p>
+            <h3>Our Services</h3>
+            <ul>
+                <li>Personalized Medicine Suggestions</li>
+                <li>Diet and Lifestyle Recommendations</li>
+                <li>Healthcare Solutions for Chronic Conditions</li>
+                <li>Free Appointment Booking</li>
+                <li>Nearby Hospital Locator</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="https://www.facebook.com"><img src="facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com"><img src="instagram.png" alt="Instagram"></a>
+                <a href="https://www.twitter.com"><img src="twitter.png" alt="Twitter"></a>
+                <a href="https://www.youtube.com"><img src="youtube.png" alt="YouTube"></a>
+                <a href="https://www.whatsapp.com"><img src="whatsapp.png" alt="WhatsApp"></a>
+            </div>
+            <p>&copy; 2024 MedMeer. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Sidebar Toggle -->
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById("sidebar");
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-200px"; // Hide sidebar
+            } else {
+                sidebar.style.left = "0px"; // Show sidebar
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
